@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./styles/globals.css";
 import Hero from "./components/Hero";
 
@@ -6,12 +7,18 @@ import GamesSection from "./components/GamesSection";
 import CornSection from "./components/CornSection";
 
 import SocialLinks from "./components/SocialLinks";
-
 import BlogSection from "./components/BlogSection";
 import About from "./components/About";
 import Footer from "./components/Footer";
 
 export default function App() {
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col bg-primary-light dark:bg-primary-dark transition-colors duration-300">
       <Hero />

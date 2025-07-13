@@ -36,7 +36,7 @@ export default function BlogSection() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden min-h-screen flex items-center bg-gray-950">
+    <section className="py-20 px-4 relative overflow-hidden min-h-screen flex items-center bg-gray-950">
       {/* Animated orb background (matching all other sections) */}
       <motion.div
         className="absolute inset-0 -z-10 overflow-hidden"

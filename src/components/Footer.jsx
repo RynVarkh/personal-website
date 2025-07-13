@@ -106,7 +106,7 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+            {/* <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
               Quick Links
             </h4>
             <nav className="space-y-1">
@@ -134,7 +134,7 @@ export default function Footer() {
               >
                 About Me
               </a>
-            </nav>
+            </nav> */}
           </motion.div>
 
           {/* Contact */}

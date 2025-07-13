@@ -1,8 +1,21 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 import profileImg from "../../assets/profile.jpg";
 
 export default function Hero() {
+  const [hideScrollIndicator, setHideScrollIndicator] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setHideScrollIndicator(true);
+      window.removeEventListener("scroll", handleScroll);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen py-16 text-center overflow-hidden bg-gray-950">
       {/* Enhanced animated background */}
@@ -71,7 +84,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
         >
-          Content Creator & Community Builder
+          Creator & Builder
         </motion.p>
 
         <motion.p
@@ -113,20 +126,26 @@ export default function Hero() {
         </motion.div>
 
         {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
-        >
-          <div className="w-6 h-10 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center">
-            <motion.div
-              className="w-1 h-3 bg-accent-pink rounded-full mt-2"
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            />
-          </div>
-        </motion.div>
+        {!hideScrollIndicator && (
+          <motion.div
+            className="fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center justify-center z-30"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.5 }}
+          >
+            <div className="w-8 h-14 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center items-start bg-gradient-to-b from-white/10 to-gray-300/0 dark:from-gray-800/30 dark:to-gray-900/0 shadow-lg">
+              <motion.div
+                className="w-2 h-4 bg-accent-pink rounded-full mt-2"
+                animate={{ y: [0, 20, 0] }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+            </div>
+          </motion.div>
+        )}
       </div>
     </section>
   );
