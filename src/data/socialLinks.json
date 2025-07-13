@@ -1,0 +1,58 @@
+[
+  {
+    "name": "GitHub",
+    "url": "https://github.com/yourusername",
+    "icon": "github",
+    "followers": 1200
+  },
+  {
+    "name": "Twitter",
+    "url": "https://twitter.com/yourusername",
+    "icon": "twitter",
+    "followers": 3400
+  },
+  {
+    "name": "Instagram",
+    "url": "https://instagram.com/yourusername",
+    "icon": "instagram",
+    "followers": 2100
+  },
+  {
+    "name": "LinkedIn",
+    "url": "https://linkedin.com/in/yourusername",
+    "icon": "linkedin",
+    "followers": 900
+  },
+  {
+    "name": "YouTube",
+    "url": "https://youtube.com/@yourusername",
+    "icon": "youtube",
+    "followers": 5000
+  },
+  {
+    "name": "Medium",
+    "url": "https://medium.com/@yourusername",
+    "icon": "medium",
+    "followers": 800
+  },
+  {
+    "name": "Discord",
+    "url": "https://discord.gg/yourinvitecode",
+    "icon": "discord",
+    "followers": 300
+  },
+  {
+    "name": "Telegram",
+    "url": "https://t.me/yourusername",
+    "icon": "telegram",
+    "followers": 400
+
+  },
+  {
+    "name": "Steam",
+    "url": "https://steamcommunity.com/id/yoursteamid",
+    "icon": "steam",
+    "followers": 150
+
+  }
+] 
